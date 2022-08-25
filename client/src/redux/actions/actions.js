@@ -15,9 +15,9 @@ import {
 } from './actionTypes';
 import Swal from 'sweetalert2';
 
-const heroku = 'https://pi-pokemon-main.herokuapp.com';
+const render = 'https://pi-pokemon-main.onrender.com/';
 
-axios.defaults.baseURL = heroku;
+axios.defaults.baseURL = render;
 
 //GETS----------------------------------------------------------
 
