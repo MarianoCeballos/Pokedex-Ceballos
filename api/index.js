@@ -15,12 +15,14 @@ conn.sync({ force: false }).then(() => {
     if (types.length) {
       console.log('Types table already filled');
     } else {
-      await getPokemonsTypes();
+      console.log('Filling Types table...');
+      await getPokemonsTypes().then(()=> console.log("done"))
     }
     if (pokemons.length) {
       console.log('Pokemons table already filled');
     } else {
-      await getPokemonsApi();
+      console.log('Filling Pokemons table...');
+      await getPokemonsApi().then(()=> console.log("done"))
     }
     console.log(`%s listening at ${process.env.PORT}`);
   });

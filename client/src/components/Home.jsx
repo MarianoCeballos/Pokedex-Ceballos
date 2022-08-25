@@ -66,6 +66,8 @@ function Home() {
         .then((result) => {
           if (!result.isConfirmed) {
             dispatch(filterPokemons('All'));
+          } else {
+            history.push('/create');
           }
         })
         .then(() => dispatch(filterPokemons('All')));

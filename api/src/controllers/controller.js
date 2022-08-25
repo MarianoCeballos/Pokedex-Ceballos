@@ -19,34 +19,39 @@ let PokemonModel = {
         offset = offset + 100;
       }
     } catch (error) {
-      throw new Error(error.message);
+      console.error(error)
     }
   },
 
   //GET_DB_POKEMONS------------------------------------------------------
   insertPokemonsDB: async function (api) {
     api.results.map(async (p) => {
-      const res = (await axios.get(p.url)).data;
-      let pokemon = {
-        name: res.name,
-        hp: res.stats[0].base_stat,
-        attack: res.stats[1].base_stat,
-        defense: res.stats[2].base_stat,
-        speed: res.stats[3].base_stat,
-        height: res.height,
-        weight: res.weight,
-        image: res.sprites.other.dream_world.front_default
-          ? res.sprites.other.dream_world.front_default
-          : 'https://assets.pokemon.com/static2/_ui/img/og-default-image.jpeg',
-        api: true,
-      };
-      const typesArr = [];
-      res.types.map((t) =>
-        typesArr.push(parseInt(t.type.url.substring(31).replace('/', '')))
-      );
-      const poke = await Pokemon.create(pokemon);
-      await poke.addTypes(typesArr);
-    });
+      try {
+        const res = (await axios.get(p.url)).data;
+        let pokemon = {
+          name: res.name,
+          hp: res.stats[0].base_stat,
+          attack: res.stats[1].base_stat,
+          defense: res.stats[2].base_stat,
+          speed: res.stats[3].base_stat,
+          height: res.height,
+          weight: res.weight,
+          image: res.sprites.other.dream_world.front_default
+            ? res.sprites.other.dream_world.front_default
+            : 'https://assets.pokemon.com/static2/_ui/img/og-default-image.jpeg',
+          api: true,
+        };
+        const typesArr = [];
+        res.types.map((t) =>
+          typesArr.push(parseInt(t.type.url.substring(31).replace('/', '')))
+        );
+        const poke = await Pokemon.create(pokemon);
+        await poke.addTypes(typesArr);
+      } catch (error) {
+        console.error(error)
+      }
+    })
+     
   },
 
   //GET_ALL_POKEMONS------------------------------------------------------
@@ -56,38 +61,44 @@ let PokemonModel = {
       const pokemonDb = await Pokemon.findAll({ include: Type });
       return pokemonDb.sort((a, b) => a.dataValues.id - b.dataValues.id);
     } catch (error) {
-      throw new Error(error.message);
+      console.error(error)
     }
   },
   //GET_POKEMON_BY_PARAM------------------------------------------------------
 
   getPokemonByName: async function (name, search) {
-    if (!search) {
-      const pokemon = await Pokemon.findOne({
-        where: {
-          name,
-        },
-        include: Type,
-      });
-
-      return pokemon;
-    } else {
-      const pokemon = await Pokemon.findAll({
-        where: {
-          name: {
-            [Op.iLike]: '%' + name + '%',
+    try {
+      if (!search) {
+        const pokemon = await Pokemon.findOne({
+          where: {
+            name,
           },
-        },
-        include: Type,
-      });
-      return pokemon;
+          include: Type,
+        });
+  
+        return pokemon;
+      } else {
+        const pokemon = await Pokemon.findAll({
+          where: {
+            name: {
+              [Op.iLike]: '%' + name + '%',
+            },
+          },
+          include: Type,
+        });
+        return pokemon;
+      }
+    } catch (error) {
+      console.error(error)
     }
+    
   },
 
   //--------------------TYPES--------------------
 
   getPokemonsTypes: async function () {
-    let response = (await axios.get(`https://pokeapi.co/api/v2/type`)).data
+    try {
+      let response = (await axios.get(`https://pokeapi.co/api/v2/type`)).data
       .results;
     let arrayTypes = response.map((type, index) => {
       return {
@@ -102,6 +113,10 @@ let PokemonModel = {
       });
     }
     return arrayTypes;
+    } catch (error) {
+     console.error(error) 
+    }
+ 
   },
 
   //CREATE_POKEMON ---------------------
@@ -136,7 +151,7 @@ let PokemonModel = {
 
       return result;
     } catch (error) {
-      throw new Error(error.message);
+      console.error(error)
     }
   },
 
@@ -167,7 +182,7 @@ let PokemonModel = {
       await pokemon.update(changes);
       return pokemon;
     } catch (error) {
-      return null;
+      console.error(error)
     }
   },
 };
