@@ -1,0 +1,150 @@
+.cont {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px auto;
+}
+.card {
+  min-height: 508px;
+  border: 1px solid;
+  width: 400px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all ease 0.2s;
+}
+.stats {
+  gap: -20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.stats h3,
+.stats h4 {
+  padding: 0;
+  margin: 0;
+}
+
+.card img {
+  display: block;
+  max-height: 150px;
+  max-width: 130px;
+  position: relative;
+  margin: 20px auto;
+  border: 1px solid black;
+  border-radius: 30px;
+}
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+}
+
+.pokeName {
+  text-align: center;
+  font-weight: 600;
+}
+.types {
+  display: flex;
+  justify-content: space-around;
+  margin: 14px 0 15px 0;
+  flex-direction: row;
+}
+
+.types img {
+  width: 50px;
+  height: 50px;
+}
+.hp span,
+.types span {
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+}
+.types span {
+  padding: 5px 20px;
+  border-radius: 20px;
+  color: #ffffff;
+}
+.delBtn {
+  display: block;
+  padding: 4px 24px;
+
+  background-color: #101010;
+  color: #ffffff;
+  position: relative;
+
+  border: none;
+  border-radius: 5px;
+  margin-top: -47px;
+}
+.btn {
+  display: block;
+  padding: 15px 60px;
+  font-size: 18px;
+  background-color: #101010;
+  color: #ffffff;
+  position: relative;
+  margin: 30px auto;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn button {
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all 0.35s;
+}
+
+.btn span {
+  position: relative;
+  z-index: 2;
+}
+
+.btn:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+
+  color: wheat;
+  transition: all 0.35s;
+}
+
+.btn:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 166, 0);
+}
+
+.btn:hover:after {
+  width: 100%;
+}

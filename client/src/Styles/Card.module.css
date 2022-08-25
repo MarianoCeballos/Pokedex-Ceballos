@@ -1,0 +1,228 @@
+/* body {
+  background-color: #eff3ff;
+} */
+.container {
+  margin: 0px;
+  width: 350px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  object-fit: contain;
+}
+.number {
+  margin-right: 10000px;
+  margin-top: -25px;
+  margin-bottom: 50px;
+  color: red;
+  font-size: large;
+}
+.notFound {
+  margin-top: 341px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -116px;
+}
+.card {
+  object-fit: contain;
+  border: 1px solid;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 35px;
+  border-radius: 10px;
+  transition: all ease 0.2s;
+  background-color: rgb(210, 215, 84);
+}
+.card:hover {
+  box-shadow: 0 20px 30px black;
+}
+
+.pokeImg {
+  display: block;
+  min-height: 100px;
+  max-height: 150px;
+  min-width: 100px;
+  max-width: 250px;
+  position: relative;
+  margin: 0px auto;
+  border: 1px solid black;
+  border-radius: 30px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.685);
+  transition: all ease 0.2s;
+}
+.card img:hover {
+  transform: scale(1.1);
+}
+
+.typeDetails .typeImage {
+  width: 70px;
+  height: 70px;
+  margin: 0 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid black;
+}
+
+.hp {
+  width: 80px;
+  background-color: #ffffff;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 30px;
+  margin-left: auto;
+  font-weight: 400;
+}
+.pokeName {
+  text-align: center;
+  font-weight: 600;
+}
+.pokeName h1 {
+  margin: 0;
+  margin-bottom: 20px;
+}
+.imgContainer {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.types {
+  display: flex;
+  margin: 0;
+  justify-content: space-around;
+}
+.types img {
+  width: 50px;
+  height: 50px;
+}
+.hp span,
+.types span {
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+}
+.types span {
+  padding: 5px 20px;
+  border-radius: 20px;
+  color: #ffffff;
+}
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+.stats p {
+  color: #404060;
+}
+
+.link {
+  text-decoration: none;
+  color: #404060;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+.link:active {
+  color: #404060;
+}
+.typeDetails {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  justify-content: center;
+  text-align: center;
+  color: #404060;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 0 10px;
+}
+
+.linkOne {
+  text-decoration: none;
+  color: #404060;
+}
+.linkOne:active {
+  color: #404060;
+}
+.btn {
+  display: block;
+  padding: 15px 60px;
+  font-size: 18px;
+  background-color: #101010;
+  color: #ffffff;
+  position: relative;
+  margin: 30px auto;
+  border: none;
+  border-radius: 5px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+.btn button {
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all 0.35s;
+}
+
+.btn span {
+  position: relative;
+  z-index: 2;
+}
+.btn:disabled {
+  background-color: #101010;
+  color: #ffffff;
+}
+
+.btn:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+
+  color: wheat;
+  transition: all 0.35s;
+}
+.btn:disabled:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 0, 0);
+}
+
+.btn:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 166, 0);
+}
+
+.btn:hover:after {
+  width: 100%;
+}
+.cardCont {
+  height: 200px;
+  margin: 0;
+}
+.cardCont a {
+  top: -20px;
+}
+
+.cardContAll {
+  margin: 0;
+  padding: 0;
+  height: 450px;
+  margin: 10px 20px;
+}

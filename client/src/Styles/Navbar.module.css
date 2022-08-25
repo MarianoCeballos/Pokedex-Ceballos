@@ -1,0 +1,95 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(234, 91, 91);
+  width: 100%;
+  height: 60px;
+  padding: 0 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+.nav h1 {
+  height: 200px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linksCreate a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all ease 0.3s;
+  padding: 2px 5px;
+}
+.linksCreate a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 0 0 white;
+  box-shadow: 0 -2px 0 0 white;
+  box-shadow: -2px 0 0 0 white;
+  box-shadow: 2px 0 0 0 white;
+  box-shadow: 0 0 0 2px white;
+}
+
+.linksCreate li {
+  list-style: none;
+  margin: 0 10px;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.links_active {
+  background-color: rgba(181, 36, 36, 0.673);
+  color: rgb(255, 255, 255);
+}
+.links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+}
+.links ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.links li {
+  list-style: none;
+  margin: 0 10px;
+}
+
+.searchBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filters select {
+  margin: 10px;
+  width: 140px;
+  height: 30px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  cursor: pointer;
+}

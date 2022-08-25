@@ -1,0 +1,43 @@
+.pagination {
+  display: inline-block;
+}
+.pagButtons {
+  min-width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.spanDots {
+  height: 40px;
+  width: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 18px;
+  font-weight: bold;
+}
+.btn {
+  border-radius: 5px;
+  font-family: monospace;
+  width: 40px;
+  text-align: center;
+  color: black;
+  height: 40px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.btn:enabled {
+  background-color: rgb(234, 91, 91);
+  color: rgb(0, 0, 0);
+}
+.btn:hover {
+  background-color: aliceblue;
+}
+.btn:disabled {
+  background-color: #7a7a7a;
+  color: white;
+}
