@@ -9,6 +9,7 @@ require('./db.js');
 const server = express();
 const local = 'http://localhost:3000';
 const vercel = 'https://pokedex-ceballos.vercel.app';
+const vercel2="https://pokedex-ceballos-marianoceballos.vercel.app";
 server.name = 'API';
 
 server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
@@ -16,7 +17,7 @@ server.use(bodyParser.json({ limit: '50mb' }));
 server.use(cookieParser());
 server.use(morgan('dev'));
 server.use((req, res, next) => {
-  const allowedOrigins = [local, vercel];
+  const allowedOrigins = [local, vercel,vercel2];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
     res.setHeader('Access-Control-Allow-Origin', origin);
