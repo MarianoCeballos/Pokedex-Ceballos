@@ -14,7 +14,7 @@ import {
   GET_POKEMON_DETAIL,
 } from './actionTypes';
 import Swal from 'sweetalert2';
-
+//
 const render = 'https://pi-pokemon-main.onrender.com/';
 
 axios.defaults.baseURL = render;
