@@ -14,23 +14,15 @@ const SearchBar = () => {
     };
 
     return (
-        <form className={s.search}>
-            <div className={s.input}>
-                <input
-                    value={search}
-                    onChange={(e) => handleChange(e)}
-                    type='text'
-                    placeholder='Search pokémon'
-                />
-            </div>
-            <div>
-                <input
-                    className={s.searchButton}
-                    type='submit'
-                    value='Search'
-                />
-            </div>
-        </form>
+        <div>
+            <input
+                className={s.input}
+                value={search}
+                onChange={(e) => handleChange(e)}
+                type='text'
+                placeholder='Search pokémon'
+            />
+        </div>
     );
 };
 
